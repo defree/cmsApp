@@ -12,10 +12,9 @@ var testentry =
             {position:'3',type:'text',width:'25%',height:'25%',bgcolor:'#bbbbbb',textcolor:'',content:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}
         ];
 
-cmsApp.controller('cmsMain', ['$scope', '$sce', 'block', function ($scope, $sce, block) {
-    
-    
-    test = block.getHtml(testentry);
+cmsApp.controller('cmsMain', ['$scope', '$sce', 'blocks', function ($scope, $sce, blocks) {
+        
+    test = blocks.getHtml(testentry);
     //alert(test);
     $scope.content = $sce.trustAsHtml(test);
 }]);

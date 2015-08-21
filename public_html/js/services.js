@@ -4,17 +4,9 @@
  * and open the template in the editor.
  */
 
-cmsApp.factory('block', ['blockToHtml', function(blockToHtml) {
-     
-    function block(position,type,width,height,bgcolor,textcolor,content) {
-        this.position = position;
-        this.type = type;
-        this.width = width;
-        this.height = height;
-        this.bgcolor = bgcolor;
-        this.textcolor = textcolor;
-        this.content = content;
-    }; 
+cmsApp.factory('blocks', ['blockToHtml', function(blockToHtml) {
+    
+    var blocks = {};
     
     function comparePos(a,b) {
         if (a.position < b.position)
@@ -24,7 +16,7 @@ cmsApp.factory('block', ['blockToHtml', function(blockToHtml) {
         return 0;
     }
     
-    block.getHtml = function(testentry) {
+    blocks.getHtml = function(testentry) {
         
         var readyBlock = "";
         
@@ -37,15 +29,15 @@ cmsApp.factory('block', ['blockToHtml', function(blockToHtml) {
         return readyBlock;
     };
 
-    return block;
+    return blocks;
 }]);
 
 cmsApp.factory('blockToHtml', function() {
     
-    var factory = {}; 
+    var blockToHtml = {}; 
     
     
-    factory.buildBlock = function(entry) {
+    blockToHtml.buildBlock = function(entry) {
     
         var leadConst = '<div class="block" style="width:'+entry.width+'; height:'+entry.height+'; background-color:'+entry.bgcolor+'; color:'+entry.textcolor+';">';
         var endConst = '</div>';
@@ -69,5 +61,13 @@ cmsApp.factory('blockToHtml', function() {
         }
         return returnBlock;
     };
-    return factory;
+    return blockToHtml;
+});
+
+cmsApp.service('blockFileRead', function() {
+    
+    var blockFile = {};
+
+
+    return blockFile;
 });
