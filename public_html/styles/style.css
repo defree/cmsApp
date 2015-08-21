@@ -1,0 +1,32 @@
+html{
+    width: 100%;
+    height: 100%;
+        
+    box-sizing: border-box;
+    
+    font-family: arial;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body, #view, #content {
+    width: inherit;
+    height: inherit;   
+}
+
+.block {
+    display: block;
+    background-color: #ffffff;
+    
+    padding: 10px;
+    
+    float:left;
+    
+    overflow: auto;
+}
